@@ -1,11 +1,19 @@
 function fpb(angka1, angka2) {
-  for(let i = 1;i<angka1;i++){
+  var a;
+  var faktor = 1;
 
+  if(angka1>angka2){
+    a=angka1;
+  } else{
+    a=angka2;
   }
 
-  for(let j = 1;j<angka2;j++){
-
+  for(var i=1;i<=a;i++){
+    if(angka1%i===0&&angka2%i===0){
+      faktor = i;
+    }
   }
+  return faktor;
 }
 
 // TEST CASES

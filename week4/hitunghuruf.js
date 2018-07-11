@@ -1,13 +1,30 @@
 function hitungHuruf(kata) {
   let word = kata.split(" ");
+  const resultWord = [];
+  let result = '';
   let max = 0;
 
-  for(let i = 0;i<word.length;i++){
-    for(let j = 0;k<word[i].length;j++){
-
+  for(let i = 0; i<word.length;i++){
+    let charMap = [];
+    for(let j of word[i]){
+      charMap[j] = charMap[j]+1 || 1;
     }
+    resultWord.push(charMap);
   }
 
+  for(let i = 0 ; i<resultWord.length;i++){
+    let counter = 0;
+    for(let j in resultWord[i]){
+      if(resultWord[i][j]>1){
+        counter+=resultWord[i][j];
+      }
+    }
+    if(counter>max){
+      max = counter;
+      result = word[i];
+    }
+  }
+  return result;
 }
 
 // TEST CASES

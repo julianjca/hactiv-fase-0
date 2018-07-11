@@ -1,11 +1,13 @@
 function balikKata(kata) {
-  var panjang = kata.length;
+  /* var panjang = kata.length;
   let balik='';
 
   for(let i = panjang-1;i>=0;i--){
     balik+=kata[i];
   }
-  return balik;
+  return balik; */
+
+  return kata.split('').reverse().join('');
 
 }
 

@@ -24,9 +24,7 @@ function targetTerdekat(arr) {
         hitungJarak= jarak;
       }
     }
-
   }
-
   if(counterX>0){
     return hitungJarak;
   }

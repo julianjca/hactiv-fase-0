@@ -14,7 +14,6 @@ function cariModus(arr) {
         }
     }
 
-    var counterSama=0;
     for(let char in arr){
       if(arr[0]===arr[char]){
 

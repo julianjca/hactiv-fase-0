@@ -1,8 +1,22 @@
-function ubahHuruf(kata) {
+/* function ubahHuruf(kata) {
   let result = '';
 
   for(let i of kata){
     result += String.fromCharCode(i.charCodeAt(0) + 1);
+  }
+
+  return result;
+} */
+
+function ubahHuruf(kata) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let result = '';
+  for(let i of kata){
+    for(let j = 0;j<alphabet.length;j++){
+      if(i===alphabet[j]){
+        result+=alphabet[j+1];
+      }
+    }
   }
 
   return result;

@@ -12,7 +12,6 @@ function angkaPalindrome(num) {
     num1++;
   }
   return num1-1;
-
 }
 
 // TEST CASES

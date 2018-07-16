@@ -2,6 +2,7 @@ function groupAnimals(animals) {
   let result = [];
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
   let counter = 0;
+
   while(counter<alphabet.length){
     let sementara =[];
     let ada = 0;
@@ -16,7 +17,6 @@ function groupAnimals(animals) {
     }
     counter++;
   }
-
   return result;
 }
 

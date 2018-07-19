@@ -12,6 +12,8 @@ function hitungHuruf(kata) {
     resultWord.push(charMap);
   }
 
+  console.log(resultWord);
+
   for(let i = 0 ; i<resultWord.length;i++){
     let counter = 0;
     for(let j in resultWord[i]){

@@ -3,7 +3,7 @@ function changeMe(arr) {
   };
 
   for(let i = 0;i<arr.length;i++){
-    console.log(`${i+1}. ${arr[i][0]} ${arr[i][1]}`)
+    console.log(`${i+1}. ${arr[i][0]} ${arr[i][1]}`);
     result.firstName = arr[i][0];
     result.lastName = arr[i][1];
     result.gender = arr[i][2];

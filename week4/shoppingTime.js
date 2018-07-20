@@ -19,7 +19,30 @@ maka output:
 { memberId: '324193hDew2', money: 700000, listPurchased: [ 'Baju Zoro', 'Sweater Uniklooh' ], changeMoney: 25000 } */
 
 function shoppingTime(memberId, money) {
-  // you can only write your code here!
+  if(memberId===''||memberId===undefined||money===undefined){
+    return "Mohon maaf, toko X hanya berlaku untuk member saja";
+  } else if(money<50000){
+    return "Mohon maaf, uang tidak cukup";
+  } else{
+    let barang = [['Sepatu Stacattu',1500000],['Baju Zoro',500000],['Baju H&N',250000],['Sweater Uniklooh',175000],['Casing Handphone',50000]];
+
+    let result = {};
+    result.memberId = memberId;
+    result.money = money;
+    let listPurchased = [];
+    let sisaUang = money;
+    for(let i = 0;i<barang.length;i++){
+      if(sisaUang>=barang[i][1]){
+        listPurchased.push(barang[i][0]);
+        sisaUang-=barang[i][1];
+      }
+    }
+    result.listPurchased = listPurchased;
+    result.changeMoney = sisaUang;
+
+    return result;
+  }
+
 }
 
 // TEST CASES

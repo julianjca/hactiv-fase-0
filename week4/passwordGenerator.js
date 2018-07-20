@@ -5,7 +5,6 @@ function changeVocals (str) {
 
   for(let i of str){
     let counter = 0;
-
     for(let j = 0;j<vocal.length;j++){
       if(i===vocal[j]){
         result += alphabet[j];
@@ -14,13 +13,10 @@ function changeVocals (str) {
     }
     if(counter===0){
       result+=i;
-
     }
   }
-
   return result;
 }
-
 
 function reverseWord (str) {
   return str.split('').reverse().join('');
@@ -43,7 +39,6 @@ function setLowerUpperCase (str) {
 
 function removeSpaces (str) {
   return str.replace(/\s/g, '');
-
 }
 
 function passwordGenerator (name) {

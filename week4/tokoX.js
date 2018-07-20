@@ -11,7 +11,7 @@ Function countProfit akan mengembalikan/me-return sebuah array of object dimana 
 
 function countProfit(shoppers) {
   let tampungShoppers = shoppers;
-  if(tampungShoppers.length===0){
+  if(tampungShoppers.length === 0){
     return tampungShoppers;
   } else{
     let listBarang = [ ['Sepatu Stacattu', 1500000, 10], ['Baju Zoro', 500000, 2], ['Sweater Uniklooh', 175000, 1]];
@@ -19,7 +19,7 @@ function countProfit(shoppers) {
     for(let i=0;i<listBarang.length;i++){
       let tampung = [];
       let result = {};
-      let counter =0;
+      let counter = 0;
       let sisa = listBarang[i][2];
       for(let j = 0;j<shoppers.length;j++){
         result.product = listBarang[i][0];

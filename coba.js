@@ -3,7 +3,7 @@
 }
 console.log(nextChar('a')); */
 
-function drawSymbolicColsBox(num) {
+/* function drawSymbolicColsBox(num) {
   var urutan = 1;
   for (var i = 0; i < num; i++) {
     let result ='';
@@ -19,6 +19,29 @@ function drawSymbolicColsBox(num) {
   }
   console.log (result);
 }
+} */
+
+//drawSymbolicColsBox(5);
+
+//Balik Kata Rekursif
+function balikKata(str){
+  let hurufBlk = str[str.length-1];
+  let hurufSisa = str.slice(0,str.length-1);
+
+  if(hurufSisa.length===0){
+    return hurufBlk;
+  } else{
+    return hurufBlk + balikKata(hurufSisa);
+  }
 }
 
-drawSymbolicColsBox(5);
+function balikKata2(str){
+  if(str.length===0){
+    return '';
+  } else{
+    return str[str.length-1]+balikKata2(str.slice(0,str.length-1));
+  }
+}
+
+console.log(balikKata('haha'));
+console.log(balikKata2('haha'));

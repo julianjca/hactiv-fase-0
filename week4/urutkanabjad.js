@@ -1,5 +1,16 @@
 function urutkanAbjad(str) {
-  return str.split('').sort().join('');
+  //return str.split('').sort().join('');
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let result ='';
+    for(let i = 0 ; i < alphabet.length;i++){
+      for(let j = 0 ; j < str.length;j++){
+        if(alphabet[i] === str[j]){
+          result+=alphabet[i];
+        }
+      }
+    }
+
+    return result;
 }
 
 // TEST CASES

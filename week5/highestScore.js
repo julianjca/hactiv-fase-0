@@ -7,49 +7,42 @@ function highestScore (students) {
     for(let i = 0;i<students.length;i++){
         namaKelas.push(students[i].class);
     }
-
-    console.log(namaKelas);
     namaKelas1 = namaKelas.reduce(function(a,b){if(a.indexOf(b)<0)a.push(b);return a;},[]);
-    console.log(namaKelas1);
 
-    let foxes = [];
-    let wolves = [];
     let result = {};
     let resultSimpan = {};
+    let finalMatrix = [];
 
-    for(let i =0;i<students.length;i++){
-      if(students[i].class==='foxes'){
-        foxes.push(students[i]);
-      } else{
-        wolves.push(students[i]);
+    for(let i=0;i<namaKelas1.length;i++){
+      let simpanKelas = [];
+      for(let j =0;j<students.length;j++){
+        if(students[j].class===namaKelas1[i]){
+          simpanKelas.push(students[j]);
+        }
       }
+      finalMatrix.push(simpanKelas);
     }
 
-    console.log(foxes);
-    console.log(wolves);
-    let maxF = 0;
-    for(let i = 0;i<foxes.length;i++){
-      if(foxes[i].score>maxF){
-        maxF = foxes[i].score;
-        resultSimpan.name = foxes[i].name;
-        resultSimpan.score = maxF;
-      }
-    }
-    result.foxes = resultSimpan;
-    resultSimpan = {};
-    let maxW = 0;
-    for(let i = 0;i<wolves.length;i++){
-      if(wolves[i].score>maxW){
-        maxW = wolves[i].score;
-        resultSimpan.name = wolves[i].name;
-        resultSimpan.score = maxW;
-      }
-    }
-    result.wolves = resultSimpan;
+    let resultFinal = {};
 
-    return result;
+    for(let i = 0; i<finalMatrix.length;i++){
+      let resultSimpan = {};
+      let max = 0;
+      for(let j = 0;j<finalMatrix[i].length;j++){
+        if(finalMatrix[i][j].score>max){
+          max = finalMatrix[i][j].score;
+          resultSimpan.name = finalMatrix[i][j].name;
+          resultSimpan.score = max;
+        }
+      }
+      resultFinal[finalMatrix[i][0].class] = resultSimpan;
+    }
+
+    return resultFinal;
     }
   }
+
+
 
 // TEST CASE
 console.log(highestScore([

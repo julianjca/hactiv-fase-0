@@ -12,7 +12,6 @@ function changeMe(arr) {
       result.age = 'invalid birth year';
     }
     console.log(result);
-
   }
 
 }

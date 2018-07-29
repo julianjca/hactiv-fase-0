@@ -33,3 +33,30 @@ console.log(angkaTerbesar([2, 3, 7, 6, 5])) // 7
 console.log(angkaTerbesar([9, 3, 7, 4, 1])) // 9
 console.log(angkaTerbesar([2, 1, 7, 2, 8])) // 7
 console.log(angkaTerbesar([])) // -1
+
+
+//https://stackoverflow.com/questions/33534790/finding-maximum-value-in-array-recursively
+function max(numArray){
+  if(numArray.length===0){
+    return -1;
+  } else{
+    // copy the given array
+    nums = numArray.slice();
+
+    // base case: if we're at the last number, return it
+    if (nums.length == 1) { return nums[0]; }
+
+    // check the first two numbers in the array and remove the lesser
+    if (nums[0] < nums[1]) { nums.splice(0,1); }
+    else { nums.splice(1,1); }
+
+    // with one less number in the array, call the same function
+    return max(nums);
+  }
+
+}
+
+console.log(max([2, 3, 7, 6, 5])) // 7
+console.log(max([9, 3, 7, 4, 1])) // 9
+console.log(max([2, 1, 7, 2, 8])) // 7
+console.log(max([])) // -1

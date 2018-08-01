@@ -24,22 +24,39 @@ RULES:
 
 function missingNumbers (numbers) {
   let newArr = [];
-  for(let i = 1;i<=10;i++){
-    newArr.push(i);
+  for(let i = 0;i<numbers.length;i++){
+    let simpan = 0;
+    for(let j = i;j<numbers.length;j++){
+      if(numbers[i]>numbers[j]){
+        simpan = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = simpan;
+      }
+    }
+  }
+
+  let max = numbers[numbers.length-1];
+  let min = numbers[0];
+  if(numbers[1]-numbers[0]!==1){
+    for(let i = min;i<=max;i++){
+      newArr.push(i);
+    }
   }
 
   let result = [];
-  for(let i = 0;i<newArr.length;i++){
+  for(let i of newArr){
     let counter = 0;
-    for(let j = 0;j<numbers.length;j++){
-      if(numbers[j]===newArr[i]){
+    for(let j of numbers){
+      if(i===j){
         counter++;
       }
     }
     if(counter===0){
-      result.push(newArr[i]);
+      result.push(i);
     }
   }
+
+  return result;
 }
 
 console.log(missingNumbers([1, 5, 10, 7, 6])); // [2, 3, 4, 8, 9]

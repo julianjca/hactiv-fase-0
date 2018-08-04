@@ -56,6 +56,7 @@ function heal() {
     playerHealth += 10;
   }
   printLogHeal('Player',10);
+  logging2.textContent = " ";
   playerHealthDOM.textContent = playerHealth;
   playerHealthDOM.style.width = `${playerHealth}%`;
 }
